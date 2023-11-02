@@ -25,8 +25,9 @@ print("Color Loop")
 list_colors = ["color1","color2"]
 for color in list_colors:
     print(color)
+
 #for loop will look at each value in that list
-print("First for loop")
+print("Second for loop")
 total = 0
 for x in range(1,4):
     print(x)
@@ -38,6 +39,7 @@ print("Reverse Loop")
 for x in range(10,7,-1):
     print(x)
 
+#looping through a string
 my_string = "Hello"
 for c in my_string:
     print(c)
@@ -72,14 +74,14 @@ while counter < 10:
     ##additional steps can go here
     counter += 1
 
+#sentinel controlled while loop
 exit_str = 'ZZZ'
-
 user_input = input("Enter a name or ZZZ to quit")
 while user_input != 'ZZZ' and user_input != 'zzz':
     print(user_input)
     user_input = input("Enter a name or ZZZ to quit")
 
 
+#importing the random module to use the randint() function
 import random
-
 print(random.randint(5,8))

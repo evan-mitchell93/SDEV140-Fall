@@ -1,0 +1,6 @@
+Sometimes Mr. Mitchell forgets to push his
+code changes to github. Then he cannot access
+his examples for SDEV 140. He also forgets to push
+after class and has to go back to 210 to 
+get the files on his own computer.
+Always push to github when you can.
