@@ -8,8 +8,8 @@ main_window.title("Our first GUI")
 
 
 #a button is a type of widget you can add
-stop_button = tk.Button(main_window,text='Stop',width=30)
-
+chalet_img = tk.PhotoImage(file="chalet.png")
+chalet_button = tk.Button(main_window,image=chalet_img,)
 #pack, grid and place organize widgets before
 #placing them in the parent window
 
