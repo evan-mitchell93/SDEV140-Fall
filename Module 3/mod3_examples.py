@@ -17,27 +17,18 @@ f.write("Hello\n")
 f.close()
 
 #Mode r - will allow you to read data from the file
-f = open("reading.txt","r")
+f = open("../reading.txt","r")
 #read() will read all lines of text from the file at once
 text = f.read()
 print(text)
 f.close()
 
-f = open("reading.txt","r")
-while 1:
-    #readline() will read a single line of text ending with \n
-    line = f.readline()
-    if line == "":
-        break
-    print(line)
-
-f.close()
-
 scores = open("scores.txt","r")
-sum = 0
+#readlines returns all lines as a list/array
 lines = scores.readlines()
+sum = 0
 for line in lines:
     sum += int(line.split(',')[1])
 
 avg = sum/len(lines)
-print(f'{sum}, {len(lines)}, {avg}')
+print(f'{sum}, {len(lines)}, avg: {avg:.2f}')
