@@ -13,7 +13,6 @@ chalet_button = tk.Button(main_window,image=chalet_img,)
 #pack, grid and place organize widgets before
 #placing them in the parent window
 
-stop_button.pack()
 #main loop is an infinite loop that waits for 
 #an event to occur like key pressed until window
 #is closed
