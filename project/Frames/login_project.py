@@ -20,8 +20,7 @@ class Window(Tk):
         #setup a Frame 
         container = Frame(self,height=400,width=600, bg='#E6E6FA')
         container.pack(side="top", fill="both",expand=True)
-        container.grid_columnconfigure(0,weight=1)
-        container.grid_rowconfigure(0,weight=1)
+
         #add our other pages to a dictionary
         self.frames = {}
         for F in (MainPage,MapSelect,CharacterSelect):
@@ -38,4 +37,5 @@ class Window(Tk):
 
 if __name__ == "__main__":
     win = Window()
+    win.minsize(600,400)
     win.mainloop()
