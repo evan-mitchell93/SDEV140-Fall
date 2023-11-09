@@ -6,7 +6,7 @@ class MainPage(Frame):
         label = Label(self,text="Main Page of Application")
         label.pack(padx=10,pady=10)
         self.grid(row=0,column=0)
-
+        self.configure(bg="#fff")
         switch_button = Button(
             self,
             text="Go to Map Selection",
