@@ -7,7 +7,6 @@ SDEV 140 Project Examples
 
 from tkinter import *
 from tkinter import messagebox
-from mainpage import MainPage
 from mapselect import MapSelect
 from characterselect import CharacterSelect
 
@@ -19,14 +18,19 @@ class Window(Tk):
         self.grid_rowconfigure(0,weight=1)
         self.grid_columnconfigure(0,weight=1)
 
+        self.frames = {"character_frame":CharacterSelect(self),"map_frame":MapSelect(self)}
+        self.frames["character_frame"].grid(row=0,column=0)
+        self.frames["character_frame"].grid_forget()
+        self.frames["map_frame"].grid(row=0,column=0)
 
-        #call show frame for the first page on launch
-        frame_main = MainPage(self)
-        self.show_frame(frame_main)
 
     def show_frame(self,name):
-        frame = name
-        frame.tkraise()
+        for frame in self.frames:
+            if frame == name:
+                self.frames[frame].grid(row=0,column=0)
+                self.frames[frame].tkraise()
+            else:
+                self.frames[frame].grid_forget()
 
 if __name__ == "__main__":
     win = Window()
