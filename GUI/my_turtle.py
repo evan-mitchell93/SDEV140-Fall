@@ -8,6 +8,11 @@ IMAGE_POS = (100,150)
 #Flag for won game
 WIN = False
 
+text_t = turtle.Turtle()
+img_t = turtle.Turtle()
+img_t.hideturtle()
+img_t.penup()
+img_t.speed(100)
 #start players with 0 misses
 misses = 0
 
@@ -17,19 +22,33 @@ num_chars = len(secret_word)
 correct_letters = []
 
 #hide the default turtle shape
-turtle.hideturtle()
-turtle.up()
+text_t.hideturtle()
+text_t.up()
 #move turtle to starting position for text
-turtle.goto(TEXT_POS[0],TEXT_POS[1])
+text_t.goto(TEXT_POS[0],TEXT_POS[1])
 #display blanks for each character in the secret
 starting = "_ " * num_chars
 #write the _ _ _ _ to the screen
-turtle.write(starting,font=("Arial",20,"normal"))
+text_t.write(starting,font=("Arial",20,"normal"))
 
 #will be used to draw the hangman image on bad guesses
 def draw_img(count):
     #for now do nothing
-    pass
+    if count == 1:
+        img_t.goto(IMAGE_POS[0],IMAGE_POS[1])
+        img_t.pendown()
+        img_t.right(90)
+        img_t.circle(15,None,100)
+        img_t.penup()
+    elif count == 2:
+        img_t.goto(IMAGE_POS[0] + 15,IMAGE_POS[1]-15)
+        img_t.pendown()
+        img_t.forward(30)
+        img_t.pendown()
+        img_t.forward(40)
+        img_t.right(180)
+        img_t.forward(30)
+        img_t.penup()
 
 while misses < 8 and WIN == False:
     guess = turtle.textinput("Guess","Guess a letter in the word").lower()
@@ -46,12 +65,11 @@ while misses < 8 and WIN == False:
             output = output + letter + " "
         else:
             output = output + "_ "
-    turtle.clear()
-    turtle.goto(TEXT_POS[0],TEXT_POS[1])
-    turtle.write(output,font=("Arial",20,"normal"))
+    text_t.clear()
+    text_t.goto(TEXT_POS[0],TEXT_POS[1])
+    text_t.write(output,font=("Arial",20,"normal"))
 
     #if all letters have been guessed, there will be no "_ " in the output
     if "_ " not in output:
         WIN = True
-        turtle.Screen().bgcolor = "blue"
 turtle.mainloop()
