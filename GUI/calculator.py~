@@ -1,0 +1,18 @@
+from breezypythongui import EasyFrame
+
+class CalculatorGUI(EasyFrame):
+    def __init__(self):
+        EasyFrame.__init__(self,title="Calculator App")
+        self.addLabel(text="First Operand",row=0,column=0)
+        self.first_op = self.addIntegerField(row=1,column=0)
+        self.addLabel(text="Second Operand",row=0,column=2)
+        self.second_op = self.addIntegerField(row=1,column=2)
+        self.addButton(text = "+",row=3,column=0,command=self.add_ops)
+        self.addLabel(text="Result",row=5,column=5)
+        self.res = self.addIntegerField(,row=6,column=6)
+        
+    def add_ops(self):
+        self.res.setNumber(self.first_op.getNumber() + self.second_op.getNumber())
+
+
+CalculatorGUI().mainloop()

@@ -43,9 +43,7 @@ def draw_img(count):
     elif count == 2:
         img_t.goto(IMAGE_POS[0] + 15,IMAGE_POS[1]-15)
         img_t.pendown()
-        img_t.forward(30)
-        img_t.pendown()
-        img_t.forward(40)
+        img_t.forward(70)
         img_t.right(180)
         img_t.forward(30)
         img_t.penup()
@@ -72,4 +70,6 @@ while misses < 8 and WIN == False:
     #if all letters have been guessed, there will be no "_ " in the output
     if "_ " not in output:
         WIN = True
+        text_t.clear()
+        text_t.write("You won", font=("Arial",28,"normal"))
 turtle.mainloop()
