@@ -10,7 +10,8 @@ class CalculatorGUI(EasyFrame):
         self.addLabel(text="Second Operand",row=0,column=2,columnspan=2, sticky="NSEW")
         self.second_op = self.addIntegerField(value=0,row=1,column=2,columnspan=2,sticky="NSEW")
 
-        #Operations buttons 
+        #Operations buttons
+        #STICKY DOESNT WORK BY DEFAULT WITH BREEZY ADD BUTTON - MUST EDIT MODULE FILE
         self.addButton(text = "+",row=3,column = 0,command=self.add_ops,sticky="NSEW")
         self.addButton(text = "-",row=3,column = 1, command=self.sub_ops,sticky="NSEW")
         self.addButton(text = "*",row=3,column = 2, command=self.multi_ops,sticky="NSEW")
