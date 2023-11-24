@@ -4,12 +4,13 @@ import turtle
 #turtle position for drawing text
 TEXT_POS = (-100,100)
 #turtle position to draw hangman
-IMAGE_POS = (100,150)
+IMAGE_POS = (-50,300)
 #Flag for won game
 WIN = False
 
 text_t = turtle.Turtle()
 img_t = turtle.Turtle()
+img_t.color("red")
 img_t.hideturtle()
 img_t.penup()
 img_t.speed(100)
@@ -45,8 +46,37 @@ def draw_img(count):
         img_t.pendown()
         img_t.forward(70)
         img_t.right(180)
+        img_t.forward(50)
+        img_t.penup()
+    elif count == 3:
+        img_t.right(135)
+        img_t.pendown()
         img_t.forward(30)
         img_t.penup()
+        img_t.right(180)
+        img_t.forward(30)
+    elif count == 4:
+        img_t.pendown()
+        img_t.left(90)
+        img_t.forward(30)
+        img_t.penup()
+        img_t.right(180)
+        img_t.forward(30)
+        img_t.right(135)
+    elif count == 5:
+        img_t.forward(50)
+        img_t.pendown()
+        img_t.left(45)
+        img_t.forward(30)
+        img_t.penup()
+        img_t.right(180)
+        img_t.forward(30)
+    elif count == 6:
+        img_t.left(90)
+        img_t.pendown()
+        img_t.forward(30)
+        img_t.penup()
+
 
 while misses < 8 and WIN == False:
     guess = turtle.textinput("Guess","Guess a letter in the word").lower()
