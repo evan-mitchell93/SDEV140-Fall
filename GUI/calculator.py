@@ -1,3 +1,11 @@
+'''
+    Evan Mitchell
+    SDEV 140
+    tkinter/breezy example - UGLY CALCULATOR
+    11/27/2023
+'''
+
+
 from breezypythongui import EasyFrame
 
 class CalculatorGUI(EasyFrame):
