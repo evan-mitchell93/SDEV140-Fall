@@ -19,6 +19,12 @@ class CalculatorGUI(EasyFrame):
         self.addButton(text = "%",row=3,column = 4, command=self.mod_ops,sticky="NSEW")
         self.addLabel(text="Result",row=4,column=0,columnspan=2,sticky="NSEW")
         self.res = self.addIntegerField(value=0,row=4,column=2,columnspan=2,sticky="NSEW")
+        self.addButton(text="C",row=5,column=0,command=self.clear_all,sticky="NSEW")
+    
+    def clear_all(self):
+        self.first_op.setNumber(0)
+        self.second_op.setNumber(0)
+        self.res.setNumber(0)
         
     def add_ops(self):
         self.res.setNumber(self.first_op.getNumber() + self.second_op.getNumber())
@@ -35,4 +41,4 @@ class CalculatorGUI(EasyFrame):
     def mod_ops(self):
         self.res.setNumber(self.first_op.getNumber() % self.second_op.getNumber())
 
-CalculatorGUI().mainloop()
+CalculatorGUI().mainloop() 

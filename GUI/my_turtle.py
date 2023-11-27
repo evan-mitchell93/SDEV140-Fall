@@ -78,7 +78,7 @@ def draw_img(count):
         img_t.penup()
 
 
-while misses < 8 and WIN == False:
+while misses < 7 and WIN == False:
     guess = turtle.textinput("Guess","Guess a letter in the word").lower()
     if guess in secret_word:
         correct_letters.append(guess)
