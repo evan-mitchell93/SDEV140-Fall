@@ -31,6 +31,8 @@ n = 5
 l = 25
 
 for count in range(n):
+    #for colors to use rgb must update turtle.cfg
+    #colormode = 255
     t.fillcolor(
         random.randint(0,255),
         random.randint(0,255),
