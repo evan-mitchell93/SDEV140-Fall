@@ -5,6 +5,7 @@ from main_frame import MainFrame
 from match_frame import Match
 
 
+#Base Application Window
 root = tk.Tk()
 
 main_window = MainFrame()
@@ -15,7 +16,7 @@ match_window = None
 def start_match():
     global match_window
     match_window = Match()
-    match_window.grid(row=0,column=0,sticky="NSEW")
+    match_window.grid(row=1,column=0,sticky="NSEW")
     finish_btn = tk.Button(match_window,text="Finish Match", command=finish_match)
     finish_btn.grid(row=1,column=0)
 
