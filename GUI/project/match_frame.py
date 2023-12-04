@@ -7,8 +7,8 @@ class Match(EasyFrame):
         self.round_w = 0
         self.round_l = 0
 
-        self.addButton(text="Round Won",row=2,column=0,command=self.round_won)
-        self.addButton(text="Round Lost",row=2,column=1,command=self.round_lost)
+        self.addButton(text="Round Won",row=1,column=0,command=self.round_won)
+        self.addButton(text="Round Lost",row=1,column=1,command=self.round_lost)
 
     
     def round_won(self):
