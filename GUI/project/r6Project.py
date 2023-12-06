@@ -2,6 +2,7 @@ from breezypythongui import EasyFrame
 import tkinter as tk
 from main_frame import MainFrame
 from match_frame import Match
+import pickle
 
 
 #Base Application Window
@@ -19,6 +20,8 @@ def start_match():
     match_window.grid(row=0,column=0,sticky="NSEW")
     finish_btn = tk.Button(match_window,text="Finish Match", command=finish_match)
     finish_btn.grid(row=0,column=0)
+    save_btn = tk.Button(match_window,text="Save",command=save_match)
+    save_btn.grid(row=2,column=2)
 
 def finish_match():
     match_window.grid_forget()
@@ -26,5 +29,4 @@ def finish_match():
 #Associate the start_btn with the main windows
 start_btn = tk.Button(main_window,text="Start Match",command=start_match)
 start_btn.grid(row=0,column=0)
-
 root.mainloop()
