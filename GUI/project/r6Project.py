@@ -18,10 +18,8 @@ def start_match():
     global match_window
     match_window = Match()
     match_window.grid(row=0,column=0,sticky="NSEW")
-    finish_btn = tk.Button(match_window,text="Finish Match", command=finish_match)
-    finish_btn.grid(row=0,column=0)
-    save_btn = tk.Button(match_window,text="Save",command=save_match)
-    save_btn.grid(row=2,column=2)
+    """finish_btn = tk.Button(match_window,text="Finish Match", command=finish_match)
+    finish_btn.grid(row=0,column=0)"""
 
 def finish_match():
     match_window.grid_forget()

@@ -22,7 +22,7 @@ class Typer(EasyFrame):
         word_size = len(word)
         repeat_word = self.word_box.get()
         repeat_word_size = len(repeat_word)
-        if self.FLAG == False:
+        if self.FLAG == False and repeat_word_size == 1:
             global start
             start = time.time()
             print("Timer started")
